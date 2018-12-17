@@ -6,8 +6,10 @@ class Talk2me < Sinatra::Base
     erb :index
   end
 
-  post "/homepage" do
-    "Welcome, Beatrice!"
+  post "/message" do
+    @message = params[:message]
+    erb(:message)
+    redirect "/"
   end
 
 end
