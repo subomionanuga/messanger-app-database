@@ -10,7 +10,7 @@ class Talk2me < Sinatra::Base
       session[:messages] = []
     end
     # session[:message] ||= []
-    @message = session[:message]
+    # @message = session[:message]
     @messages = session[:messages]
 
     erb :index

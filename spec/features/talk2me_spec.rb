@@ -21,4 +21,12 @@ feature "Message" do
       expect(page).to have_content "Talk to me"
       expect(page).to have_content "Keep talking to me"
     end
+
+    scenario "Will only display first twenty characters of each message" do
+      homepage
+      fill_in "message", with: "Keep talking to me Subomi"
+      click_button("Send")
+      expect(page).to have_content "Talk to me"
+      expect(page).to have_content "Keep talking to me S"
+    end
   end
