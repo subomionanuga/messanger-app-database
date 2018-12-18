@@ -2,8 +2,8 @@ class Message
 
 attr_reader :text, :time
 
-  def initialize(message)
-    @text = message
+  def initialize(text)
+    @text = text
     @time = Time.now
   end
 

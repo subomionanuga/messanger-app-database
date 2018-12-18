@@ -1,20 +1,23 @@
 require "sinatra/base"
+require './lib/message'
 
 class Talk2me < Sinatra::Base
 
   enable :sessions
 
   get "/" do
-    # session[:messages] || = []
-    # @messages = session[:messages]
+    # session[:messages] ||= []
+    @message = session[:message]
     erb :index
   end
 
   post "/message" do
-    @message = params[:message]
-    # message = Message.new(params[message])
+    session[:message] = Message.new(params[:message])
     # session[:messages] << message
-    redirect "/"
+    redirect '/'
+
   end
+
+  # run! if app_file == $0
 
 end
