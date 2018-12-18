@@ -7,3 +7,10 @@ feature "Homepage" do
     # expect(page).to have_content "Welcome, Beatrice!"
   end
 end
+
+feature "Message" do
+  scenario "Display messages on homepage" do
+    homepage
+    expect(page).to have_content "Talk to me"
+    end
+  end
