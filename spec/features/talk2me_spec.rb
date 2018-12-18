@@ -13,4 +13,12 @@ feature "Message" do
     homepage
     expect(page).to have_content "Talk to me"
     end
+
+    scenario "Display multipe messages" do
+      homepage
+      fill_in "message", with: "Keep talking to me"
+      click_button("Send")
+      expect(page).to have_content "Talk to me"
+      expect(page).to have_content "Keep talking to me"
+    end
   end
