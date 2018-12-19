@@ -1,6 +1,13 @@
+require 'pg'
+
 class Message
 
 attr_reader :text, :time
+
+  # def self.all
+  #   connection = PG.connect(dbname: 'messanger_db')
+  #   connection.exec('SELECT * FROM messages;')
+  # end
 
   def initialize(text)
     @text = text

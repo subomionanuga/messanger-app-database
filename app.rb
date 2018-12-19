@@ -1,7 +1,15 @@
 require "sinatra/base"
 require './lib/message'
 
+
+
+
+
 class Talk2me < Sinatra::Base
+
+  # configure :development do
+  #   set :database, {adapter: 'postgresql',  encoding: 'UTF8', database: 'messanger_db'}
+  # end
 
   enable :sessions
 
