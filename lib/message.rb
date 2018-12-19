@@ -1,6 +1,11 @@
-require 'pg'
+require "pg"
+require "data_mapper"
 
 class Message
+  include DataMapper::Resource
+
+  property :id, Serial
+  property :message, String
 
 attr_reader :text, :time
 
@@ -18,4 +23,12 @@ attr_reader :text, :time
     @text[0...20]
   end
 
+  # def message_count
+  #   counter = 0
+  #
+  #   counter += 1
+  # end
+
 end
+
+DataMapper.finalize

@@ -7,9 +7,9 @@ require './lib/message'
 
 class Talk2me < Sinatra::Base
 
-  # configure :development do
-  #   set :database, {adapter: 'postgresql',  encoding: 'UTF8', database: 'messanger_db'}
-  # end
+  configure :development do
+    DataMapper.setup(:default, 'postgres://subomi-makers@Subomis-MacBook-Pro.local/messanger_db')
+  end
 
   enable :sessions
 
@@ -20,15 +20,20 @@ class Talk2me < Sinatra::Base
     # session[:message] ||= []
     # @message = session[:message]
     @messages = session[:messages]
-
     erb :index
   end
 
   post "/message" do
-    session[:message] = Message.new(params[:message])
-    session[:messages] << session[:message]
+    message = Message.new(params[:message])
+    session[:messages] << message
+    # session[:messages] << Message.new(params[:message])
     redirect '/'
+  end
 
+  get "/full_message/:id" do
+    messages = session[:messages]
+    @message = messages[Integer(params[:id])]
+    erb(:full_message)
   end
 
   # run! if app_file == $0

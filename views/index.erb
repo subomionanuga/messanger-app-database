@@ -5,9 +5,9 @@
   <input type="submit" value="Send">
 </form>
 
-<% @messages.reverse.each do |message| %>
-<br>
-<%= message.twenty_chars %> -- <%= message.time %>
+<% @messages.each_with_index.reverse_each do |message, index| %>
+  <br>
+  <a href = "/full_message/<%= index %>"><%= message.twenty_chars %></a> -- <%= message.time %>
 <%end%>
 <br />
 <%#<img class="irc_mi" src="https://thumbs.gfycat.com/UniqueSafeIndianringneckparakeet-max-1mb.gif" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)" width="240" height="138" style="margin-top: 108px;" alt="Related image">
