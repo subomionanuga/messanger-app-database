@@ -1,10 +1,9 @@
-require "pg"
+# require "pg"
 require "data_mapper"
 
-DataMapper.setup(:default, "postgres://@Carol/localhost/messanger_db")
-DataMapper::Logger.new($stdout, :debug)
-DataMapper.auto_upgrade!
-DataMapper.finalize
+DataMapper.setup(:default, "postgres://localhost/messanger_db")
+# DataMapper::Logger.new($stdout, :debug)
+
 
 class Message
   include DataMapper::Resource
@@ -38,3 +37,6 @@ class Message
 end
 
 
+DataMapper.finalize
+
+DataMapper.auto_upgrade!

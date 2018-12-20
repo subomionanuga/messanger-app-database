@@ -1,38 +1,24 @@
 require "sinatra/base"
 require './lib/message'
-
-
-
-
+require 'data_mapper'
+require 'pry'
 
 class Talk2me < Sinatra::Base
 
-  configure :development do
-    DataMapper.setup(:default, 'postgres://@Carol/localhost/messanger_db')
-  end
-
-  # enable :sessions
+  # configure :development do
+  #   DataMapper.setup(:default, 'postgres://localhost/messanger_db')
+  #   DataMapper.finalize
+  # end
 
   get "/" do
-    # if session[:messages].nil?
-    #   session[:messages] = []
-    # end
-    # session[:message] ||= []
-    # @message = session[:message]
-    # @messages = session[:messages]
+    # binding.pry
     @messages = Message.all
     erb :index
   end
 
   post "/message" do
-    # message = Message.new(params[:message])
-    # @message = Message.create(params[:message], Time.new)
-    @message = Message.create(
-      :message => params[:message],
-      :time => Time.now
-    )
-    # session[:messages] << message
-    # session[:messages] << Message.new(params[:message])
+    @message = Message.create(:message => params[:message])
+    # binding.pry
     redirect '/'
   end
 
