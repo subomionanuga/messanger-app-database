@@ -18,14 +18,13 @@ class Talk2me < Sinatra::Base
 
   post "/message" do
     @message = Message.create(:message => params[:message])
-    # binding.pry
     redirect '/'
   end
 
   get "/full_message/:id" do
     # messages = session[:messages]
     # @message = messages[Integer(params[:id])]
-    @message = Message.get[:id]
+    @message = Message.get(params[:id])
     erb(:full_message)
   end
 
