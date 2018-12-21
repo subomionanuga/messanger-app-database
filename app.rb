@@ -1,3 +1,6 @@
+ENV["RACK_ENV"] ||= "development"
+
+
 require "sinatra/base"
 require './lib/message'
 require 'data_mapper'
