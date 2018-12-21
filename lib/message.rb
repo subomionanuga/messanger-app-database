@@ -1,9 +1,6 @@
 # require "pg"
 require "data_mapper"
 
-DataMapper.setup(:default, "postgres://localhost/messanger_db/#{ ENV["RACK_ENV"] }")
-# DataMapper::Logger.new($stdout, :debug)
-
 class Message
   include DataMapper::Resource
 
@@ -23,7 +20,3 @@ class Message
   end
 
 end
-
-DataMapper.finalize
-
-DataMapper.auto_upgrade!

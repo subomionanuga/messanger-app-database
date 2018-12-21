@@ -4,7 +4,7 @@
       "/Users/subomi-makers/Documents/projects/messanger-app-database/app.rb": [
         1,
         null,
-        null,
+        1,
         1,
         1,
         1,
@@ -44,9 +44,6 @@
         1,
         null,
         1,
-        null,
-        null,
-        1,
         1,
         null,
         1,
@@ -61,10 +58,17 @@
         null,
         null,
         1,
-        529,
+        29,
         null,
         null,
+        null
+      ],
+      "/Users/subomi-makers/Documents/projects/messanger-app-database/config/talk2me_mapper.rb": [
+        1,
         null,
+        1,
+        null,
+        1,
         null,
         1,
         null,
@@ -130,6 +134,6 @@
         null
       ]
     },
-    "timestamp": 1545392825
+    "timestamp": 1545395430
   }
 }

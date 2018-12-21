@@ -1,9 +1,9 @@
 ENV["RACK_ENV"] ||= "development"
 
-
 require "sinatra/base"
 require './lib/message'
 require 'data_mapper'
+require "./config/talk2me_mapper"
 require 'pry'
 
 class Talk2me < Sinatra::Base
