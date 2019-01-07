@@ -22,3 +22,8 @@ gem "pry"
 gem "rubocop", "~> 0.61.1"
 
 gem "simplecov", require: false, group: :test
+gem "simplecov-console"
+
+group :test do
+  gem "database_cleaner"
+end

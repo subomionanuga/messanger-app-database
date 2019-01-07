@@ -3,6 +3,7 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    ansi (1.5.0)
     ast (2.4.0)
     bcrypt (3.1.12)
     bcrypt-ruby (3.1.5)
@@ -28,6 +29,7 @@ GEM
       dm-validations (~> 1.2.0)
     data_objects (0.10.17)
       addressable (~> 2.1)
+    database_cleaner (1.7.0)
     diff-lcs (1.3)
     dm-aggregates (1.2.0)
       dm-core (~> 1.2.0)
@@ -67,6 +69,7 @@ GEM
       data_objects (= 0.10.17)
     docile (1.3.1)
     fastercsv (1.5.5)
+    hirb (0.7.3)
     jaro_winkler (1.5.1)
     json (1.8.6)
     json_pure (1.8.6)
@@ -119,6 +122,10 @@ GEM
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
+    simplecov-console (0.4.2)
+      ansi
+      hirb
+      simplecov
     simplecov-html (0.10.2)
     sinatra (2.0.4)
       mustermann (~> 1.0)
@@ -138,12 +145,14 @@ PLATFORMS
 DEPENDENCIES
   capybara (~> 3.12)
   data_mapper (~> 1.2)
+  database_cleaner
   dm-postgres-adapter (~> 1.2)
   pg (~> 1.1)
   pry
   rspec (~> 3.8)
   rubocop (~> 0.61.1)
   simplecov
+  simplecov-console
   sinatra (~> 2.0)
 
 BUNDLED WITH
